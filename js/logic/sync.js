@@ -121,6 +121,7 @@ async function fetchAndMerge() {
       case 'home': renderTransactions(); break;
       case 'transactions': renderAllTransactions(); break;
       case 'reports': renderSummary(); break;
+      case 'planner': if (typeof renderPlanner === 'function') renderPlanner(); break;
       case 'categories': renderCategoryLists(); break;
     }
   } catch (e) {

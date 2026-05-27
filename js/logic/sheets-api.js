@@ -22,11 +22,12 @@ async function fetchAllData() {
   App.investments = result.investments || [];
   if (result.categories?.expense?.length) App.categories.expense = result.categories.expense;
   if (result.categories?.income?.length) App.categories.income = result.categories.income;
-  if (result.budget && (result.budget.income?.length || result.budget.expense?.length)) {
+  // Always trust remote budget (so deletes propagate too — empty array means user cleared it)
+  if (result.budget) {
     App.budget = {
       year: result.budget.year || App.budget.year || new Date().getFullYear(),
-      income: result.budget.income || [],
-      expense: result.budget.expense || [],
+      income: Array.isArray(result.budget.income) ? result.budget.income : [],
+      expense: Array.isArray(result.budget.expense) ? result.budget.expense : [],
     };
     if (typeof saveBudget === 'function') saveBudget();
   }
