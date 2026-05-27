@@ -1,0 +1,21 @@
+{
+  "name": "Money Tracker",
+  "short_name": "Money",
+  "description": "Personal finance, investment log & 12-month budget planner",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f4f6f8",
+  "theme_color": "#0d9488",
+  "lang": "th",
+  "categories": ["finance", "productivity"],
+  "icons": [
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "เพิ่มรายการ", "short_name": "เพิ่ม", "url": "./index.html#home", "icons": [{ "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" }] },
+    { "name": "วางแผน", "short_name": "Planner", "url": "./index.html#planner", "icons": [{ "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" }] }
+  ]
+}
